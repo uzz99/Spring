@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: department-service
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+#    url: jdbc:mariadb://localhost:3306/web
+#    url: jdbc:mariadb://172.17.0.2:3306/web
+#    url: jdbc:mariadb://mariadb:3306/web
+#    url: jdbc:mariadb://10.111.45.52:3306/web
+    url: jdbc:mariadb://mariadb-service:3306/web
+    username: beyond
+    password: beyond
+mybatis:
+  type-aliases-package: com.beyond.department.vo
+  mapper-locations:
+  - classpath:mappers/**/*.xml
+springdoc:
+  swagger-ui:
+    operations-sorter: method
+  paths-to-match:
+  - /v1/**

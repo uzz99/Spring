@@ -1,0 +1,24 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: subject-service
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/web
+#    url: jdbc:mariadb://mariadb:3306/web
+#    url: jdbc:mariadb://mariadb-service:3306/web
+    username: beyond
+    password: beyond
+mybatis:
+  type-aliases-package: com.beyond.subject.vo
+  mapper-locations:
+  - classpath:mappers/**/*.xml
+springdoc:
+  swagger-ui:
+    operations-sorter: method
+  paths-to-match:
+  - /v1/**
+department-service:
+#  base-url: http://localhost:8080/v1/department-service/departments/
+  base-url: http://department-service:8088/v1/department-service/departments/
